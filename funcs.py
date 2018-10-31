@@ -63,19 +63,22 @@ def part(diciinv):
     pickle.dump(invsp, open("dictimgspartial.p", "wb"))
 
 def show_5(dici, termo):
-    sorted_most5 = dici[termo][:5]
-
-    if len(sorted_most5) > 0:
-        plt.figure(figsize=(20,5))
-        i = 1
-        for img in sorted_most5:
-            plt.subplot(2,3,i)
-            plt.axis('off')
-            plt.title('{}, conf: {}'.format(img[0], '%.3f'%(img[1])))
-            img_path = img[0]
-            im = image.load_img(img_path)
-            plt.imshow(im)
-            i += 1
-        plt.show()   
-    else:
-        print('Não exitem imagens com esse termo :(')
+    
+    try:
+        sorted_most5 = dici[termo][:5]
+        if len(sorted_most5) > 0:
+            plt.figure(figsize=(20,5))
+            i = 1
+            for img in sorted_most5:
+                plt.subplot(2,3,i)
+                plt.axis('off')
+                plt.title('{}, conf: {}'.format(img[0], '%.3f'%(img[1])))
+                img_path = img[0]
+                im = image.load_img(img_path)
+                plt.imshow(im)
+                i += 1
+            plt.show()   
+        else:
+            print('Não exitem imagens com esse termo :(')
+    except KeyError as error:
+        print('O termo {} não existe!'. format(error))
