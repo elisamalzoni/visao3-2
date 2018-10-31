@@ -25,8 +25,22 @@ As flags são avaliadas no arquivo `busca_imagens.py`, que chama as funções ac
 
 ## Avaliação Crítica
 Os termos buscados mostram imagens coerentes.
+
 `python3 busca_imagens.py --partial backpack`
-![backpack](./Figure_01.png)
+![backpack](./Figure_1.png)
+
+`python3 busca_imagens.py --partial RV`
+![RV](./Figure_2.png)
+
+`python3 busca_imagens.py --partial Cardigan`
+![corgi](./Figure_3.png)
+
+` python3 busca_imagens.py --partial panda`
+![panda](./Figure_4.png)
+
+`python3 busca_imagens.py --partial 'tennis ball'`
+![tennisball](./Figure_5.png)
+
 
 A implementação da flag `--partial` não é completa, já que não é aceito qualquer rótulo que contenha a palavra e sim pela vígula espaço.
 
